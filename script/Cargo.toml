@@ -1,0 +1,17 @@
+[workspace]
+[package]
+version = "0.1.0"
+name = "sp1-eth-get-proof-verifier-script"
+edition = "2021"
+
+[dependencies]
+alloy-primitives = { version = "0.8.3", default-features = false }
+alloy-rpc-client = "0.3.6"
+alloy-transport-http = "0.3.6"
+alloy-rpc-types-eth = "0.3.6"
+hex = "0.4.3"
+serde = { version = "1.0.210", features = ["derive"] }
+serde_json = "1.0.128"
+sp1-sdk = { git = "https://github.com/succinctlabs/sp1.git" }
+tokio = "1.40.0"
+clap = { version = "4.5.20", features = ["derive"] }

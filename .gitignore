@@ -1,0 +1,4 @@
+proof*.json
+run.sh
+target/
+proof-with-io.json
