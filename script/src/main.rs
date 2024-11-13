@@ -42,7 +42,7 @@ struct Args {
 }
 
 #[tokio::main]
-async fn main() -> Result<(), Box<dyn std::error::Error>> {
+async fn main() {
     let args = Args::parse();
 
     let client = ClientBuilder::default().http(Url::from_str(&args.rpc_url).unwrap());
@@ -63,7 +63,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         ..(u64::from_str_radix(&reference_block_number[2..], 16).unwrap() + 1))
         .rev()
     {
-        println!("block_number {:?}", block_number);
         blocks.push(
             client
                 .request(
@@ -115,6 +114,4 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .expect("saving proof failed");
 
     println!("succesfully generated and verified proof for the program!");
-
-    Ok(())
 }
